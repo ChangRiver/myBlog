@@ -1,2 +1,2 @@
 # myBlog
-A blog with MEAN stack 
+A blog with nodejs backend
