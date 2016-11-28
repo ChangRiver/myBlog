@@ -19,7 +19,7 @@ router.post('/', checkNotLogin, function(req, res, next) {
   var name = req.fields.name;
   var gender = req.fields.gender;
   var bio = req.fields.bio;
-  var avatar = req.fields.avatar.path.split(path.sep).pop();
+  // var avatar = req.fields.avatar.path.split(path.sep).pop();
   var password = req.fields.password;
   var repassword = req.fields.repassword;
 
@@ -34,9 +34,9 @@ router.post('/', checkNotLogin, function(req, res, next) {
     if(!(bio.length >= 1 && bio.length <= 30)) {
       throw new Error('个人简介请限制在 1-30 个字符');
     }
-    if(!req.files.avatar.name) {
-      throw new Error('缺少头像');
-    }
+    // if(!req.files.avatar.name) {
+    //   throw new Error('缺少头像');
+    // }
     if (password.length < 6) {
       throw new Error('密码至少 6 个字符');
     }
@@ -56,8 +56,8 @@ router.post('/', checkNotLogin, function(req, res, next) {
     name: name,
     password: password,
     gender: gender,
-    bio: bio,
-    avatar: avatar
+    bio: bio
+    // avatar: avatar
   };
 
 // 用户信息写入数据库

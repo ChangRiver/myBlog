@@ -13,7 +13,7 @@ module.exports = {
   getUserByName: function getUserByName(name) {
     return User
         .findOne({ name: name })
-        .addCreateAt()
+        .addCreatedAt()
         .exec();
   }
 };
