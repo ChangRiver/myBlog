@@ -54,7 +54,10 @@ router.post('/', checkLogin, function(req, res, next) {
 
 // GET /posts/create 发表文章页
 router.get('/create', checkLogin, function(req, res, next) {
-  res.render('create');
+  var user = req.session.user;
+  res.render('create', {
+      user: user
+  });
 });
 
 //单独一篇的文章页
