@@ -61,3 +61,10 @@ routes(app);
 app.listen(config.port, function() {
   console.log(`${pkg.name} is listening on port ${config.port}`);
 });
+
+// error page
+app.use(function (err, req, res, next) {
+  res.render('error', {
+    error: err
+  }); 
+});
